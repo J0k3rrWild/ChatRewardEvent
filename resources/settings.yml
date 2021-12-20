@@ -1,0 +1,3 @@
+Time: 60   # 60 = co 60 sekund event 
+Lenght: 10 #  Długość kodu
+Characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" # Dozwolone znaki w kodzie 
