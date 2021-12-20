@@ -30,7 +30,7 @@ public $cfg;
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
         $this->saveResource("config.yml"); 
         $task = new RepeaterRender($this); 
-        $this->getScheduler()->scheduleRepeatingTask($task,50*20); // Counted in ticks (1 second = 20 ticks)
+        $this->getScheduler()->scheduleRepeatingTask($task,50*20); 
         $this->getLogger()->info(TF::GREEN."[ChatRewardEvent] > Plugin oraz konfiguracja została załadowana pomyślnie");
     }
 
@@ -38,17 +38,16 @@ public $cfg;
     public function lotto($player){   
         $this->index = 0;
         $chance = mt_rand(1, 100);
-        // Wczytanie configa
         $this->cfg = $this->getConfig()->getAll();
 
             
         for ($i = 1; $i < count($this->cfg)+1; $i++) {
             
             $this->chanceArray[$i] = $this->cfg[$i]["szansa"];
-            // var_dump($this->chanceArray[$i]);
+           
            }
 
-        //    var_dump($this->chanceArray);
+       
 
         for ($i = 1; $i <= count($this->cfg); $i++) {
             
@@ -61,7 +60,7 @@ public $cfg;
              $this->idArray[$this->index] = $this->cfg[$i]["id"];
              $this->nameArray[$this->index] = $this->cfg[$i]["nazwa"];
              $this->amountArray[$this->index] = $this->cfg[$i]["ilosc"];
-                // var_dump($this->nameArray[$this->index]);
+                
                 
             }    
         } 
@@ -75,8 +74,6 @@ public $cfg;
         $word = $e->getMessage();
         $wordlen = strlen($e->getMessage());
         $i = 0;
-        var_dump($word);
-        var_dump($wordlen);
      if($wordlen === 10){ 
        if($word === $this->rendered){
            $this->lotto($e->getPlayer());
@@ -85,9 +82,6 @@ public $cfg;
       
     }
         
-        // if($e->getMessage()){
-        
-        // }
-         
+    
     }
 }
