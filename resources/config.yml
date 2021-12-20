@@ -1,0 +1,28 @@
+# Config działa na zasadzie: 
+
+# 1:                  // Identyfikator tablicy którą z wprowadzeniem kolenych należy zwiększać kolejno
+#     id: 3          // ID przedmiotu który ma zostać wylosowany
+#     nazwa: "dirt" // Nazwa jaka się graczowi wyświetli w momencie wydropienia danego itemu
+#     szansa: 20   // Szansa jaka jest mozliwa by dany przedmiot wylosować
+#     ilosc: 2    // Ilość jaką gracz dostanie
+
+
+#     UWAGA łączna ilość szans wydropienia itemów NIE może przekraczać wartości 100
+# -----------------------------------------------------------------------------------------
+
+
+
+
+1:
+    id: 3
+    nazwa: "dirt"
+    szansa: 20
+    ilosc: 2
+
+# 2:
+#     id: 264
+#     nazwa: "diamend"   // Robić wedle wzoru i tylko wyłącznie
+#     szansa: 20
+#     ilosc: 1
+
+
