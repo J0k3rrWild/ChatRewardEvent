@@ -24,23 +24,30 @@ public $idArray;
 public $nameArray;
 public $amountArray;
 public $cfg;
+public $cfgload;
+public $settings;
 
     
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
-        $this->saveResource("config.yml"); 
+        $this->saveResource("drop.yml"); 
+        $this->saveResource("settings.yml"); 
+        $this->cfgload = new Config($this->getDataFolder()."drop.yml", Config::YAML);
+        $this->settings = new Config($this->getDataFolder()."settings.yml", Config::YAML);
+        $this->cfg = $this->cfgload->getAll();
         $task = new RepeaterRender($this); 
-        $this->getScheduler()->scheduleRepeatingTask($task,50*20); 
+        $this->getScheduler()->scheduleRepeatingTask($task, $this->settings->get("Time")*20); 
         $this->getLogger()->info(TF::GREEN."[ChatRewardEvent] > Plugin oraz konfiguracja została załadowana pomyślnie");
+        
+        
+    
     }
 
 
     public function lotto($player){   
         $this->index = 0;
         $chance = mt_rand(1, 100);
-        $this->cfg = $this->getConfig()->getAll();
 
-            
         for ($i = 1; $i < count($this->cfg)+1; $i++) {
             
             $this->chanceArray[$i] = $this->cfg[$i]["szansa"];

@@ -23,8 +23,8 @@ class RepeaterRender extends Task{
 
     public function onRun(int $tick){ 
 
-        $n=10;
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $n=$this->plugin->settings->get("Lenght");;
+        $characters = $this->plugin->settings->get("Characters");
         $randomString = '';
           
         for ($i = 0; $i < $n; $i++) {
