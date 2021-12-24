@@ -11,7 +11,8 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 use J0k3rrWild\ChatRewardEvent\Tasks\RepeaterRender; 
-use pocketmine\item\Item;
+use pocketmine\item\VanillaItems;
+use pocketmine\item\ItemFactory;
 use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener{
@@ -28,7 +29,7 @@ public $cfgload;
 public $settings;
 
     
-    public function onEnable(){
+    public function onEnable(): void{
         $this->getServer()->getPluginManager()->registerEvents($this,$this);
         $this->saveResource("drop.yml"); 
         $this->saveResource("settings.yml"); 
@@ -71,7 +72,14 @@ public $settings;
                 
             }    
         } 
-        $player->getInventory()->addItem(Item::get($this->idArray[$chance], 0, $this->amountArray[$chance]));
+     
+        $factory = ItemFactory::getInstance();
+        // new ItemFactory($this->idArray[$chance], 0, $this->amountArray[$chance])
+        $amount = $this->amountArray[$chance];
+        for($i=1; $i<=$amount; $i++){
+         $player->getInventory()->addItem($factory->get($this->idArray[$chance]));
+        
+        }
         $player->sendMessage(TF::GREEN."[MeetMate] > Brawo! Otrzymałeś ".$this->amountArray[$chance]." ".$this->nameArray[$chance]);
         $this->rendered = NULL;
     }
@@ -81,7 +89,8 @@ public $settings;
         $word = $e->getMessage();
         $wordlen = strlen($e->getMessage());
         $i = 0;
-     if($wordlen === 10){ 
+        $cfglen = $this->settings->get("Lenght");
+     if($wordlen === $cfglen){ 
        if($word === $this->rendered){
            $this->lotto($e->getPlayer());
 

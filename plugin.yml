@@ -1,7 +1,7 @@
 ---
 name: ChatRewardEvent
-version: 0.0.1
+version: 1.1.4
 main: J0k3rrWild\ChatRewardEvent\Main
 website: https://github.com/J0k3rrWild
-api: 3.26.3
+api: 4.0.3
 ...

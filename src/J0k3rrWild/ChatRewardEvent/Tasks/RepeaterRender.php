@@ -21,7 +21,7 @@ class RepeaterRender extends Task{
     } 
 
 
-    public function onRun(int $tick){ 
+    public function onRun(): void{ 
 
         $n=$this->plugin->settings->get("Lenght");;
         $characters = $this->plugin->settings->get("Characters");
