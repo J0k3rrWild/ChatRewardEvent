@@ -81,7 +81,8 @@ public $settings;
         $word = $e->getMessage();
         $wordlen = strlen($e->getMessage());
         $i = 0;
-     if($wordlen === 10){ 
+        $cfglen = $this->settings->get("Lenght");
+     if($wordlen === $cfglen){
        if($word === $this->rendered){
            $this->lotto($e->getPlayer());
 
