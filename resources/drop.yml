@@ -1,13 +1,13 @@
-# Config działa na zasadzie: 
+# Instructions: 
 
-# 1:                  // Identyfikator tablicy którą z wprowadzeniem kolenych należy zwiększać kolejno
-#     id: 3          // ID przedmiotu który ma zostać wylosowany
-#     nazwa: "dirt" // Nazwa jaka się graczowi wyświetli w momencie wydropienia danego itemu
-#     szansa: 20   // Szansa jaka jest mozliwa by dany przedmiot wylosować
-#     ilosc: 2    // Ilość jaką gracz dostanie
+# 1:                  // Identifier of the table which should be increased successively with the introduction of lines
+#     id: 3          // ID of the item to be drawn
+#     name: "dirt" // The name that will be displayed to the player when the item is dropped
+#     chance: 20   //  Possible chance for a given item to be drawn
+#     amount: 2    // The amount the player gets
 
 
-#     UWAGA łączna ilość szans wydropienia itemów NIE może przekraczać wartości 100
+#     NOTE!! the total number of chances of dropping items must NOT exceed 100 and MUST be equal to it
 # -----------------------------------------------------------------------------------------
 
 
@@ -15,14 +15,15 @@
 
 1:
     id: 3
-    nazwa: "dirt"
-    szansa: 20
-    ilosc: 2
+    name: "dirt"
+    chance: 20
+    amount: 2
 
 # 2:
 #     id: 264
-#     nazwa: "diamend"   // Robić wedle wzoru i tylko wyłącznie
-#     szansa: 20
-#     ilosc: 1
+#     name: "diamond"   // Make according to the pattern and only
+#     chance: 20
+#     amount: 1
 
 
+# REMEMBER!!!!!!! the total number of chances of dropping items must NOT exceed 100 and MUST be equal to it
