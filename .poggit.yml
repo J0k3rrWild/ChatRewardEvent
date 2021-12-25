@@ -6,4 +6,5 @@ branches:
 projects:
   ChatRewardEvent:
     path: ""
+    icon: "icon.png"
 ...
