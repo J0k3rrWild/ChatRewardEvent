@@ -23,7 +23,7 @@ class RepeaterRender extends Task{
 
     public function onRun(): void{ 
 
-        $n=$this->plugin->settings->get("Lenght");;
+        $n=$this->plugin->settings->get("Length");;
         $characters = $this->plugin->settings->get("Characters");
         $randomString = '';
           
@@ -35,7 +35,7 @@ class RepeaterRender extends Task{
          
         
           
-        $this->plugin->getServer()->broadcastMessage(TF::GREEN."[MeetMate] > Przepisz kod by otrzymać nagrode: ".TF::GOLD.$this->plugin->rendered); 
+        $this->plugin->getServer()->broadcastMessage(TF::GREEN.$this->plugin->settings->get("code-message").TF::GOLD.$this->plugin->rendered); 
      
 
 
