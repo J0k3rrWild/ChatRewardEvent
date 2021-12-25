@@ -20,4 +20,4 @@ This plugin rewards you for rewriting the code from chat! This is a great idea f
 
 ## Social media
 
-[![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/8b3rKZPYM8)
+[![Discord](https://img.shields.io/discord/735439472992321587.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/8b3rKZPYM8)
