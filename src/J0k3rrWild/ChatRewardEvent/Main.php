@@ -37,7 +37,7 @@ public $settings;
         $this->cfg = $this->cfgload->getAll();
         $task = new RepeaterRender($this); 
         $this->getScheduler()->scheduleRepeatingTask($task, $this->settings->get("Time")*20); 
-        $this->getLogger()->info(TF::GREEN."[ChatRewardEvent] > Plugin oraz konfiguracja została załadowana pomyślnie");
+        $this->getLogger()->info(TF::GREEN."[ChatRewardEvent] > Plugin and configuration loaded");
         
         
     
@@ -50,7 +50,7 @@ public $settings;
 
         for ($i = 1; $i < count($this->cfg)+1; $i++) {
             
-            $this->chanceArray[$i] = $this->cfg[$i]["szansa"];
+            $this->chanceArray[$i] = $this->cfg[$i]["chance"];
            
            }
 
@@ -65,14 +65,14 @@ public $settings;
             
              $this->index++;
              $this->idArray[$this->index] = $this->cfg[$i]["id"];
-             $this->nameArray[$this->index] = $this->cfg[$i]["nazwa"];
-             $this->amountArray[$this->index] = $this->cfg[$i]["ilosc"];
+             $this->nameArray[$this->index] = $this->cfg[$i]["name"];
+             $this->amountArray[$this->index] = $this->cfg[$i]["amount"];
                 
                 
             }    
         } 
         $player->getInventory()->addItem(Item::get($this->idArray[$chance], 0, $this->amountArray[$chance]));
-        $player->sendMessage(TF::GREEN."[MeetMate] > Brawo! Otrzymałeś ".$this->amountArray[$chance]." ".$this->nameArray[$chance]);
+        $player->sendMessage(TF::GREEN.$this->settings->get("win-message").$this->amountArray[$chance]." ".$this->nameArray[$chance]);
         $this->rendered = NULL;
     }
 
@@ -81,7 +81,7 @@ public $settings;
         $word = $e->getMessage();
         $wordlen = strlen($e->getMessage());
         $i = 0;
-        $cfglen = $this->settings->get("Lenght");
+        $cfglen = $this->settings->get("Length");
      if($wordlen === $cfglen){
        if($word === $this->rendered){
            $this->lotto($e->getPlayer());
