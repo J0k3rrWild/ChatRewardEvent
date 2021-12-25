@@ -1,3 +1,5 @@
-Time: 60   # 60 = co 60 sekund event 
-Lenght: 10 #  Długość kodu
-Characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" # Dozwolone znaki w kodzie 
+Time: 60   # 60 = the code will show up every 60 secounds
+Length: 10 #  Code length
+Characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" # Allowed strings
+win-message: "[ChatRewardEvent] > Bravo! You get " # Win message, after the word get, the number of items and the name will be displayed
+code-message: "[ChatRewardEvent] > Rewrite the code to receive the prize: " # After the sign ":" a code will be displayed
