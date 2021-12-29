@@ -38,7 +38,7 @@ public $settings;
         $this->cfg = $this->cfgload->getAll();
         $task = new RepeaterRender($this); 
         $this->getScheduler()->scheduleRepeatingTask($task, $this->settings->get("Time")*20); 
-        $this->getLogger()->info(TF::GREEN."[ChatRewardEvent] > Plugin and configuration loaded");
+        
         
         
     
