@@ -2,7 +2,7 @@
 
 You need this plugin for API 3.26.2 instead? [CLICK HERE](https://github.com/J0k3rrWild/ChatRewardEvent)
 
-[![](https://poggit.pmmp.io/shield.state/ChatRewardEvent)](https://poggit.pmmp.io/p/ChatRewardEvent)
+[![](https://poggit.pmmp.io/shield.state/ChatRewardEvent)](https://poggit.pmmp.io/p/ChatRewardEvent) [![](https://poggit.pmmp.io/shield.dl.total/ChatRewardEvent)](https://poggit.pmmp.io/p/ChatRewardEvent)
 
 ## General info
 
